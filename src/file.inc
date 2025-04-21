@@ -1,16 +1,15 @@
-macro fopen fname fdbuf
+macro fread fdbuf, textbuf
 {
     push rax
     push rdi
     push rsi
     push rdx
 
-    mov rax, 2
-    mov rdi, fname
-    mov rsi, 0
-    mov rdx, 0
-
-    mov [fdbuf], rax
+    mov rax, 0
+    mov rdi, [img]
+    mov rsi, textbuf
+    mov rdx, 256
+    syscall
 
     pop rdx
     pop rsi
